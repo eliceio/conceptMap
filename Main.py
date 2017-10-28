@@ -90,9 +90,6 @@ def testGraph():
         with open(sourceLoc, "w") as f:
             f.write(graphSource)
 
-def testKruskal():
-    print("testKruskal")
-
 def testGetSubmitCode():
     import requests
     from bs4 import BeautifulSoup

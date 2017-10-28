@@ -1,6 +1,5 @@
 import json
 
-
 class MakeGraph:
     def __init__(self):
         self.parisent = []
@@ -8,9 +7,7 @@ class MakeGraph:
         print("sorted",sorted_edge)
         node_size = len(nodes)
         edge_size = len(sorted_edge) - 1
-
         self.parent = [-1 for _ in range(node_size)]
-
         treeEdges = list()
         while(node_size != 0 ):
             print(node_size,edge_size)
@@ -28,8 +25,7 @@ class MakeGraph:
         out = dict()
         out['nodes'] = nodes
         out['edges'] = treeEdges
-        #print("dic")
-        #print(out)
+
 
         source = json.dumps(out, indent=4)
         #print(source)
@@ -41,7 +37,6 @@ class MakeGraph:
         nodes = list()
         edges = list()
         resistDistnace = 10
-        # print(concept, conceptRelation)
 
         for i, ci in enumerate(concept):
             node = dict()
@@ -67,15 +62,6 @@ class MakeGraph:
                             source = j
                             target = i
                             v = conceptRelation[i][j]
-                    # print(i, j)
-                    # edge = dict()
-                    # edge['to'] = i
-                    # edge['from'] = j
-                    # edge['option'] = 'none'
-                    # edge['value'] = conceptRelation[i][j]
-                    # edges.append(edge)
-                    # #print("\n")
-                    # continue
 
                 elif (conceptRelation[i][j] > conceptRelation[j][i]):
                     if(conceptRelation[i][j] < resistDistnace):
@@ -123,9 +109,7 @@ class MakeGraph:
                 break
         out['nodes'] = nodes
         out['edges'] = treeEdges
-        #print("dic")
-        #print(out)
-
+    
         source = json.dumps(out, indent=4)
         #print(source)
         # file write  : ./con
@@ -136,7 +120,7 @@ class MakeGraph:
             return i
             pass
         return self.find(self.parent[i])
-
+	
     def union(self, x, y):
         xx = self.find(x)
         yy = self.find(y)
@@ -148,26 +132,6 @@ class MakeGraph:
 
     def is_cycle(self,a,b):
         return self.union(a, b)
-
-
-    def find(self,i):
-        if (self.parent[i] == -1):
-            return i
-            pass
-        return self.find(self.parent[i])
-
-    def union(self, x, y):
-        xx = self.find(x)
-        yy = self.find(y)
-        if(xx == yy): #사이클 존재할 수 있음
-            return True
-        else:
-            self.parent[xx] = yy
-            return False
-
-    def is_cycle(self, x, y):
-        return self.union(x, y)
-
 
     '''
     example
