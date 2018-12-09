@@ -7,11 +7,11 @@
 **2. Categorization(Clustering)**: [Link to Clustering](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/clustering.py)
 
 **3. Recommendation(& Wikipedia Mapping; linking concept to its wiki-page)**
->- [Link to Recommendation](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/recommendation.py)
->- [Link to Wikipedia Mapping](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/conceptMapping.py)
+- [Link to Recommendation](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/recommendation.py)
+- [Link to Wikipedia Mapping](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/conceptMapping.py)
 
 **Test**: [Link to Test](https://github.com/eliceio/conceptMap/blob/master/ConceptExtraction/test.py)
->- Requirements
+- Requirements
 ```
  NLTK 3.2.4
  Numpy 1.13.1
